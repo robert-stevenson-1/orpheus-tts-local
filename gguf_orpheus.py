@@ -12,16 +12,18 @@ import queue
 import asyncio
 
 # LM Studio API settings
-API_URL = "http://127.0.0.1:1234/v1/completions"
+# API_URL = "http://127.0.0.1:1234/v1/completions" # Local Connection
+API_URL = "http://10.5.1.14:1234/v1/completions" # Local network Connection
 HEADERS = {
     "Content-Type": "application/json"
 }
 
 # Model parameters
-MAX_TOKENS = 1200
+# MAX_TOKENS = 1200
+MAX_TOKENS = 8192
 TEMPERATURE = 0.6
 TOP_P = 0.9
-REPETITION_PENALTY = 1.1
+REPETITION_PENALTY = 1.5
 SAMPLE_RATE = 24000  # SNAC model uses 24kHz
 
 # Available voices based on the Orpheus-TTS repository
