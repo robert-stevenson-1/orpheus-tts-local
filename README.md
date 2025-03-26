@@ -26,11 +26,50 @@ A lightweight client for running [Orpheus TTS](https://huggingface.co/canopylabs
    python gguf_orpheus.py --text "Hello, this is a test" --voice tara
    ```
 
-## Usage
+## Usage (python)
 
 ```
 python gguf_orpheus.py --text "Your text here" --voice tara --output "output.wav"
 ```
+## Usage (bash)
+
+The bash script, `orpheus_tts.sh`, provides a flexible way to run the `gguf_orpheus.py` Python script with various options, such as:
+
+1. Pass direct text from the command line
+2. Read text from a file using the `-f` or `--file` option
+3. Select a voice using the `-v` or `--voice` option (defaults to "tara")
+4. Display help with `-h` or `--help`
+
+### How to use the script:
+
+1. First, make it executable:
+   ```bash
+   chmod +x orpheus_tts.sh
+   ```
+
+2. Basic usage with direct text:
+   ```bash
+   ./orpheus_tts.sh "Hello, this is a test"
+   ```
+
+3. Using a different voice:
+   ```bash
+   ./orpheus_tts.sh -v leo "Hello, this is a test"
+   ```
+   or
+   ```bash
+   ./orpheus_tts.sh --voice zoe "Hello, this is a test"
+   ```
+
+4. Reading from a text file:
+   ```bash
+   ./orpheus_tts.sh -f my_text.txt
+   ```
+
+5. Combining options:
+   ```bash
+   ./orpheus_tts.sh --voice mia -f my_text.txt
+   ```
 
 ### Options
 
